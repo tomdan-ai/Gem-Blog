@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   private
 
-
   def set_defaults
     self.postsCounter ||= 0
   end
