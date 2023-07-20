@@ -9,4 +9,8 @@ class User < ApplicationRecord
   def set_defaults
     self.postsCounter ||= 0
   end
+
+  def recent_posts
+    posts.order('created_at Desc').limit(3)
+  end
 end
