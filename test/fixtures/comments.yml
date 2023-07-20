@@ -2,12 +2,6 @@
 
 one:
   text: MyText
-  created_at: 2023-07-19 08:03:55
-  post: one
-  user: one
 
 two:
   text: MyText
-  created_at: 2023-07-19 08:03:55
-  post: two
-  user: two
