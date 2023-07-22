@@ -9,7 +9,6 @@ class Post < ApplicationRecord
   after_save :update_posts_counter
   after_initialize :set_defaults
 
-
   def update_posts_counter
     author.increment!(:postsCounter)
   end

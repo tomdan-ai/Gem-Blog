@@ -7,7 +7,6 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: 'author_id'
   after_initialize :set_defaults
 
-
   def set_defaults
     self.postsCounter ||= 0
   end
