@@ -22,7 +22,9 @@ development:
 test:
   <<: *default
   database: blog_app_test
-
+  username: postgres
+  password: admin
+  
 production:
   <<: *default
   database: blog_app_production
