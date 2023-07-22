@@ -7,13 +7,12 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: 'author_id'
   after_initialize :set_defaults
 
-  private
 
   def set_defaults
     self.postsCounter ||= 0
   end
 
-  def recent_posts
-    posts.order('created_at Desc').limit(3)
+  def return_three_most_recent_posts
+    posts.order(created_at: :desc).limit(3)
   end
 end
