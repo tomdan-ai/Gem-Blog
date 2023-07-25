@@ -74,3 +74,8 @@ end
 
 # Create dependencies for linters
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# Controller specs dependencies
+gem 'rails-controller-testing'
+
+gem 'factory_bot_rails'
