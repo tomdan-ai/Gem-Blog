@@ -1,1 +1,22 @@
-<h1>Single user page</h1>
+<div class="Users-card">
+    <img class="User-img" src="<%= @user.photo %>" alt="User Image">
+    <div class="user-inn">
+      <h2><%= @user.name %></h2>
+      <p>Number Of Posts: <%= @user.postsCounter %></p>
+    </div>
+  </div>
+  <div class="user-bio">
+  <h3>Bio</h3>
+  <p> <%= @user.bio %></p>
+  </div>
+
+  <% @posts.each do |post| %>
+    <div class="post">
+      <h3><%= post.title %></h3>
+      <p><%= post.text %></p>
+      <p class="cmt-likes"><strong>Comments:</strong> <%= post.comments.count %> &nbsp;&nbsp; <strong>Likes:</strong> <%= post.likes.count %></p>
+      <%= link_to 'View Comments', user_posts_path(user_id: @user, post_id: post) %>
+    </div>
+  <% end %>
+
+  <button>See All Posts</button>
