@@ -1,14 +1,18 @@
+# app/models/user.rb
+
 class User < ApplicationRecord
   validates :name, presence: true
-  validates :postsCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   has_many :posts, foreign_key: 'author_id'
   has_many :comments, foreign_key: 'author_id'
   has_many :likes, foreign_key: 'author_id'
-  after_initialize :set_defaults
+  after_initialize :update_posts_counter
 
-  def set_defaults
-    self.postsCounter ||= 0
+  # def set_defaults
+  #   self.postsCounter ||= 0
+  # end
+  def update_posts_counter
+    update(postsCounter: posts.count)
   end
 
   def return_three_most_recent_posts
