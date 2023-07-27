@@ -1,1 +1,25 @@
-<h1>All posts by a given user page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Posts</title>
+</head>
+<body>
+  <h1>Posts for <%= @user.name %></h1>
+
+  <% @posts.each do |post| %>
+    <div class="post">
+      <%= link_to 'View Comments', user_post_path(user_id: @user, id: post) %>
+      <h3><%= post.title %></h3>
+      <p><%= post.text %></p>
+
+      <p class="cmt-likes"><strong>Comments:</strong> <%= post.comments.count %> &nbsp;&nbsp; <strong>Likes:</strong> <%= post.likes.count %></p>
+
+      <% post.return_five_most_recent_comments.each do |comment| %>
+        <p><strong><%= comment.author.name %>:</strong> <%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <button>Pagination</button>
+</body>
+</html>

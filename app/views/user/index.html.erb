@@ -1,1 +1,20 @@
-<h1>All Users Page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User List</title>
+</head>
+<body>
+  <h1>User List</h1>
+
+  <% @users.each do |user| %>
+    <div class="Users-card">
+      <img class="User-img" src="<%= user.photo %>" alt="User Image">
+      <div class="user-inn">
+        <h2><%= user.name %></h2>
+        <p>Number Of Posts: <%= user.postsCounter %></p>
+        <%= link_to 'View Profile', user_path(user) %>
+      </div>
+    </div>
+  <% end %>
+</body>
+</html>
