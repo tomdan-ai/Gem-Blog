@@ -10,7 +10,7 @@
   <p> <%= @user.bio %></p>
   </div>
 
-  <% @posts.each do |post| %>
+  <% @user.return_three_most_recent_posts.each do |post| %>
     <div class="post">
       <h3><%= post.title %></h3>
       <p><%= post.text %></p>
