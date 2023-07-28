@@ -17,3 +17,5 @@ Rails.application.routes.draw do
     resource :likes, only: [:create]
   end
 end
+
+
