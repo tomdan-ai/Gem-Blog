@@ -4,16 +4,23 @@
   <title>Post Details</title>
 </head>
 <body>
-<div class="post-card">
-      <p class="comt-likes"><strong>Comments:</strong> <%= @post.comments.count %> &nbsp;&nbsp; <strong>Likes:</strong> <%= @post.likes.count %></p>
-  <h5><%= @post.title %> by <%= @user.name %></h5>
-  <p><%= @post.text %></p>
-</div>
-<div class="post-cmts">
-  <h2>comments:</h2>
-  <% @post.return_five_most_recent_comments.each do |comment| %>
-    <p><strong><%= comment.author.name %>:</strong> <%= comment.text %></p>
-  <% end %>
-</div>
+  <div class="post-card">
+    <p class="comt-likes"><strong>Comments:</strong> <%= @post.comments.count %> &nbsp;&nbsp; <strong>Likes:</strong> <%= @post.likes.count %></p>
+    <h5><%= @post.title %> by <%= @user.name %></h5>
+    <p><%= @post.text %></p>
+  </div>
+
+  <div class="post-cmts">
+    <h2>comments:</h2>
+    <% @post.each do |comment| %>
+      <p><strong><%= comment.author.name %>:</strong> <%= comment.text %></p>
+    <% end %>
+  </div>
+
+  <%= link_to 'Add Comment', new_post_comment_path(@post) %>
+
+<%= form_with url: post_likes_path(@post.author.id, @post.id) do |form| %>
+          <%= form.submit 'Like', class: 'like_btn' %>
+        <% end %>
 </body>
 </html>
