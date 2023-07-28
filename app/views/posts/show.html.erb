@@ -12,7 +12,7 @@
 
   <div class="post-cmts">
     <h2>comments:</h2>
-    <% @post.return_five_most_recent_comments.each do |comment| %>
+    <% @post.each do |comment| %>
       <p><strong><%= comment.author.name %>:</strong> <%= comment.text %></p>
     <% end %>
   </div>
