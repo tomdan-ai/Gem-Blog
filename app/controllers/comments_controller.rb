@@ -1,7 +1,7 @@
 # app/controllers/comments_controller.rb
 
 class CommentsController < ApplicationController
-  before_action :set_post, only: [:new, :create]
+  before_action :set_post, only: %i[new create]
 
   def new
     @user = current_user
