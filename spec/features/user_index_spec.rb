@@ -29,8 +29,8 @@ RSpec.describe 'User index page', type: :feature do
     user2.posts.create(title: 'Post 3', text: 'Text for Post 3')
 
     visit users_path
-    expect(page).to have_content("Number Of Posts: 2", count: 1)
-    expect(page).to have_content("Number Of Posts: 1", count: 1)
+    expect(page).to have_content('Number Of Posts: 2', count: 1)
+    expect(page).to have_content('Number Of Posts: 1', count: 1)
   end
 
   it 'redirects to user show page when clicking on a user' do

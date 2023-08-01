@@ -5,7 +5,7 @@ RSpec.describe 'User show page', type: :feature do
     User.create!(
       name: 'John Doe',
       photo: 'user.jpg',
-      bio: 'This is John Doe.',
+      bio: 'This is John Doe.'
     )
   end
 
@@ -56,8 +56,8 @@ RSpec.describe 'User show page', type: :feature do
   it 'redirects to the post show page when clicking a user\'s post' do
     visit user_path(user)
 
-    click_link "View Comments", match: :first
- end
+    click_link 'View Comments', match: :first
+  end
 
   it 'redirects to the user\'s posts index page when clicking to view all posts' do
     visit user_path(user)

@@ -9,7 +9,6 @@ class PostsController < ApplicationController
     @post = @user.posts.includes(:comments).find(params[:id])
   end
 
-
   def new
     @post = Post.new
   end
