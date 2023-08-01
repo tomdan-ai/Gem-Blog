@@ -5,7 +5,6 @@ RSpec.describe 'User post index page', type: :feature do
   let!(:post1) { user.posts.create(title: 'First Post', text: 'Text for First Post') }
   let!(:post2) { user.posts.create(title: 'Second Post', text: 'Text for Second Post') }
 
-
   before do
     visit user_posts_path(user)
   end
@@ -13,7 +12,6 @@ RSpec.describe 'User post index page', type: :feature do
   it "displays the user's username" do
     expect(page).to have_content(user.name)
   end
-
 
   it "displays a post's title and some of the post's body" do
     expect(page).to have_content(post1.title)

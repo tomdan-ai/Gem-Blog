@@ -124,6 +124,14 @@ Install this project with:
   cd Gem-blog
   bundle install
 ```
+### Tests
+
+Test this project with:
+
+```sh
+  cd Gem-blog
+  rspec spec
+```
 ### Usage
 
 To run the project, execute the following command:
@@ -145,6 +153,7 @@ To run the project, execute the following command:
 - LinkedIn : [Tom Udoh](https://linkedin.com/in/tomudoh)
 
 👤 **Victoria Tumwebaze**
+
 - GitHub: [@GitHub](https://github.com/Victoria129)
 - LinkedIn: [@LinkedIn](https://www.linkedin.com/in/victoria-tumwebaze/)
 
@@ -167,7 +176,7 @@ To run the project, execute the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/tomdan-ai/OPP-School-Library/issues).
+Feel free to check the [issues page](https://github.com/tomdan-ai/Gem-Blog/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
