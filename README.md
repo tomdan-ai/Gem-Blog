@@ -2,8 +2,8 @@
 
 <!--
 !!! IMPORTANT !!!
-This README is an example of how you could professionally present your codebase. 
-Writing documentation is a crucial part of your work as a professional software developer and cannot be ignored. 
+This README is an example of how you could professionally present your codebase.
+Writing documentation is a crucial part of your work as a professional software developer and cannot be ignored.
 
 You should modify this file to match your project and remove sections that don't apply.
 
@@ -103,7 +103,7 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 
 ```sh
- gem install rails 
+ gem install rails
 ```
 
 
@@ -123,6 +123,14 @@ Install this project with:
 ```sh
   cd Gem-blog
   bundle install
+```
+### Tests
+
+Test this project with:
+
+```sh
+  cd Gem-blog
+  rspec spec
 ```
 ### Usage
 
@@ -144,6 +152,10 @@ To run the project, execute the following command:
 - Twitter: [@kvngWebstar](https://twitter.com/tomudoh1)
 - LinkedIn : [Tom Udoh](https://linkedin.com/in/tomudoh)
 
+👤 **Victoria Tumwebaze**
+
+- GitHub: [@GitHub](https://github.com/Victoria129)
+- LinkedIn: [@LinkedIn](https://www.linkedin.com/in/victoria-tumwebaze/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -151,13 +163,6 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Project 2: Validations and Model specs.
-- Project 3: Processing data in models.
-- Project 4: Setup and controllers.
-- Project 5: Controllers specs.
-- Project 6: Views.
-- Project 7: Forms.
-- Project 8: Integration specs for Views and fixing n+1 problems.
 - Project 9: Add Devise.
 - Project 10: Add authorization rules.
 - Project 11: Add API endpoints.
@@ -171,7 +176,7 @@ To run the project, execute the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/tomdan-ai/OPP-School-Library/issues).
+Feel free to check the [issues page](https://github.com/tomdan-ai/Gem-Blog/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
