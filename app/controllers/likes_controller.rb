@@ -13,7 +13,6 @@
 # end
 
 class LikesController < ApplicationController
-
   def create
     @user = current_user
     @post = Post.find(params[:post_id])
