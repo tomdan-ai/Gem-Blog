@@ -21,5 +21,8 @@
   </div>
 <% end %>
 
-<%= link_to 'Add Post', new_post_path %>
+<% if user_signed_in? && current_user == @user %>
+  <%= link_to 'Add Post', new_post_path %>
+<% end %>
+
 <%= link_to 'See All Posts', user_posts_path(user_id: @user) %>
