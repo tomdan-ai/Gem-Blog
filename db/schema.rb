@@ -51,7 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_02_212753) do
     t.integer "postsCounter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "default"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
