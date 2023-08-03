@@ -1,0 +1,8 @@
+<!-- app/views/comments/show.html.erb -->
+
+<h1>Comment</h1>
+<p><%= @comment.text %></p>
+
+<% if can? :destroy, @comment %>
+  <%= link_to 'Delete', comment_path(@comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
