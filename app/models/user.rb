@@ -12,7 +12,6 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: 'author_id'
   after_initialize :update_posts_counter
 
-
   def update_posts_counter
     update(postsCounter: posts.count)
   end
