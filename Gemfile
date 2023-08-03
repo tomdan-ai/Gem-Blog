@@ -78,4 +78,5 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # Controller specs dependencies
 gem 'rails-controller-testing'
 
-gem 'factory_bot_rails'
+# Login and Sign up
+gem 'devise'
