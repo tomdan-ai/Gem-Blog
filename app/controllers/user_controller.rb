@@ -1,4 +1,3 @@
-
 class UserController < ApplicationController
   before_action :set_user, only: %i[index show]
   before_action :set_post, only: %i[show_comments add_comment]
