@@ -14,14 +14,18 @@
 
       <p class="cmt-likes"><strong>Comments:</strong> <%= post.comments.count %> &nbsp;&nbsp; <strong>Likes:</strong> <%= post.likes.count %></p>
 
+
+      <% if can? :destroy, post %>
+  <%= form_for [@user, post], url: post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete this post?" } do |f| %>
+    <%= f.submit "Delete Post" %>
+  <% end %>
+<% end %>
+
+
       <% post.return_five_most_recent_comments.each do |comment| %>
         <p><strong><%= comment.author.name %>:</strong> <%= comment.text %></p>
       <% end %>
     </div>
-  <% end %>
-
-  <% if can? :destroy, @post %>
-    <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
 
   <button>Pagination</button>
