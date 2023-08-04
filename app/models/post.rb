@@ -7,10 +7,15 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
   after_save :update_posts_counter
+  after_destroy :reduce_posts_counter
   after_initialize :set_defaults
 
   def update_posts_counter
     author.increment!(:postsCounter)
+  end
+
+  def reduce_posts_counter
+    author.decrement!(:postsCounter)
   end
 
   def set_defaults

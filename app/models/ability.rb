@@ -38,18 +38,16 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user ||= User.new # Guest user (not logged in)
+    return unless user.present?
 
-    # Users can destroy their own posts and comments
-    can :destroy, Post, author_id: user.id
-    can :destroy, Comment, author_id: user.id
-
-    # Logged-in users can read (access index and show) posts
-    can :read, Post if user.persisted?
-
-    # Admins can manage all resources
-    can :manage, :all if user.role == "admin"
+    can :read, :all
+    can :create, [Comment, Post]
+    if user.role == 'admin'
+      can :manage, :all
+    else
+      can :destroy, Comment, author: user
+      can :destroy, Post, author: user
+    end
   end
 end
-
 
