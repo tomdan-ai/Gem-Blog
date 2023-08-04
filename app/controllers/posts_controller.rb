@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource # except: %i[index show]
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
@@ -22,7 +23,12 @@ class PostsController < ApplicationController
     end
   end
 
-  # other actions...
+  def destroy
+    @post = Post.find(params[:id])
+    @user = @post.author
+    @post.destroy
+    redirect_to user_path(@user), notice: 'Post was successfully deleted'
+  end
 
   private
 
