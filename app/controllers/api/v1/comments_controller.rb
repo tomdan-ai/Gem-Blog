@@ -1,7 +1,8 @@
 module Api
   module V1
     class CommentsController < ApplicationController
-      skip_before_action :verify_authenticity_token, only: [:create]
+      skip_before_action :verify_authenticity_token
+      skip_before_action :authenticate_user!
       respond_to :json
 
       def index
