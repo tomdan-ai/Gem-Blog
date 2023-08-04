@@ -8,6 +8,11 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.includes(:comments).find(params[:id])
+
+    respond_to do |format|
+      format.html # Render an HTML view (if needed)
+      format.json { render json: @post } # Render the post as JSON
+    end
   end
 
   def new
