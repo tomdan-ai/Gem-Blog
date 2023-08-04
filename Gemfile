@@ -80,3 +80,6 @@ gem 'rails-controller-testing'
 
 # Login and Sign up
 gem 'devise'
+
+# Authorization
+gem 'cancancan'
