@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'user#index'
 
   get '/user', to: 'user#index', as: 'users'
@@ -11,6 +12,3 @@ Rails.application.routes.draw do
     resource :likes, only: [:create]
   end
 end
-
-
-

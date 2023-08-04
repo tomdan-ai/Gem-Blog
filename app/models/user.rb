@@ -1,6 +1,10 @@
 # app/models/user.rb
 
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :confirmable
   validates :name, presence: true
 
   has_many :posts, foreign_key: 'author_id'
@@ -8,9 +12,6 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: 'author_id'
   after_initialize :update_posts_counter
 
-  # def set_defaults
-  #   self.postsCounter ||= 0
-  # end
   def update_posts_counter
     update(postsCounter: posts.count)
   end

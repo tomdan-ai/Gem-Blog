@@ -14,7 +14,7 @@
  *= require_self
  */
 
-.Users-card {
+ .Users-card {
   display: flex;
 }
 
@@ -55,6 +55,14 @@
   width: 50%;
 }
 
+h2 {
+  text-align: center;
+}
+
+form {
+  margin-left: 15%;
+}
+
 .post-cmts {
   border: 1px solid;
   margin-bottom: 20px;
@@ -74,4 +82,18 @@ button {
   margin-left: 70%;
   margin-bottom: -48px;
   font-size: 15px;
+}
+
+input {
+  width: 70%;
+}
+
+.field {
+  margin-left: 10%;
+}
+
+.actions input {
+  width: 10%;
+  margin-left: 35%;
+  margin-top: 2%;
 }
