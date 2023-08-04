@@ -163,10 +163,7 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Project 9: Add Devise.
-- Project 10: Add authorization rules.
-- Project 11: Add API endpoints.
-- Exercise: API documentation.
+- Proper Styling For Blog App.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

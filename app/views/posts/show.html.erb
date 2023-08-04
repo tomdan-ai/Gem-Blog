@@ -14,8 +14,8 @@
     <h2>comments:</h2>
     <% @post.comments.each do |comment| %>
       <p><strong><%= comment.author.name %>:</strong> <%= comment.text %></p>
-<% if current_user && current_user == comment.author %>
-  <%= button_to 'Delete', post_comment_path(current_user, @post), method: :delete, class: 'delete-btn' %>
+<% if current_user && current_user == comment.author %>  
+  <%= button_to 'Delete', post_comment_path(current_user, @post), method: :delete, class: 'delete-btn' %>  
     <% end %>
     <% end %>
   </div>
