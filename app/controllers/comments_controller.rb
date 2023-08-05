@@ -1,37 +1,35 @@
-class CommentsController < ApplicationController
-  before_action :set_post, only: %i[new create]
+# app/controllers/api/v1/comments_controller.rb
 
-  def new
-    @user = current_user
-    @comment = Comment.new
-  end
+module Api
+  module V1
+    class CommentsController < ApplicationController
+      before_action :set_post
 
-  def create
-    @comment = @post.comments.new(comment_params)
-    @comment.author = current_user
+      def create
+        comment = @post.comments.build(comment_params)
+        comment.user = current_user
 
-    if @comment.save
-      redirect_to user_post_path(user_id: @post.author, id: @post), notice: 'Comment was successfully added.'
-    else
-      render :new
+        if comment.save
+          render json: comment, status: :created
+        else
+          render json: { errors: comment.errors.full_messages }, status: :unprocessable_entity
+        end
+      end
+
+      def index
+        comments = @post.comments
+        render json: comments
+      end
+
+      private
+
+      def set_post
+        @post = Post.find(params[:post_id])
+      end
+
+      def comment_params
+        params.require(:comment).permit(:text)
+      end
     end
-  end
-
-  def destroy
-    @comment = Comment.find(params[:id])
-    @post = @comment.post
-    @user = @post.author
-    @comment.destroy
-    redirect_to user_post_path(@user, @post), notice: 'Comment was successfully deleted'
-  end
-
-  private
-
-  def set_post
-    @post = Post.find(params[:post_id])
-  end
-
-  def comment_params
-    params.require(:comment).permit(:text)
   end
 end

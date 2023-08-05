@@ -1,28 +1,29 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   devise_for :users
-  root 'user#index'
 
-  get '/user', to: 'user#index', as: 'users'
-  get '/users/:id', to: 'user#show', as: 'user'
-  get '/users/:user_id/posts', to: 'posts#index', as: 'user_posts'
-  get '/user/:user_id/posts/:id', to: 'posts#show', as: 'user_post'
-
-  resources :posts, only: [:new, :create, :destroy] do
-    resources :comments, only: [:new, :create, :destroy]
-    resource :likes, only: [:create]
+  resources :users do
+    resources :posts do
+      resources :likes, only: [:create]
+      resources :comments, only: [:new, :create]
+    end
   end
 
-  namespace :api do
-    namespace :v1 do
-      get 'comments/index'
-      get 'comments/create'
-      get 'posts/index'
-      resources :users, only: [] do
-        resources :posts, only: [:index] do
-          resources :comments, only: %i[index create]
-        end
+  delete "/posts/:id", to: "posts#destroy", as: :destroy_post
+  delete "/posts/:post_id/comments/:id", to: "comments#destroy", as: :destroy_comment
+
+  root to: "users#index"
+
+namespace :api do
+  namespace :v1 do
+    resources :users do
+      resources :posts, only: [:index] do
+        resources :comments, only: [:index, :create]
       end
     end
   end
 end
-  
+
+
+end
