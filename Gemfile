@@ -9,8 +9,8 @@ gem 'rails', '~> 7.0.6'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-# Use sqlite3 as the database for Active Record
-gem 'pg'
+# Use postgresql as the database for Active Record
+gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -72,14 +72,22 @@ group :test do
   gem 'webdrivers'
 end
 
-# Create dependencies for linters
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-# Controller specs dependencies
+gem 'factory_bot_rails', '~> 6.2'
+
+gem 'faker', '~> 2.18'
+
 gem 'rails-controller-testing'
 
-# Login and Sign up
-gem 'devise'
+gem 'will_paginate'
 
-# Authorization
+gem 'devise', '~> 4.8'
+
+gem 'letter_opener'
+
 gem 'cancancan'
+
+gem 'active_model_serializers'
+
+gem 'rswag'
